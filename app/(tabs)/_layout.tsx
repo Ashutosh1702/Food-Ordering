@@ -68,6 +68,27 @@ export default function TabLayout() {
                     tabBarIcon: ({ focused }) => <TabBarIcon title="Profile" icon={images.person} focused={focused} />
                 }}
             />
+            <Tabs.Screen
+                name='profile/orders'
+                options={{
+                    title: 'Orders',
+                    tabBarIcon: ({ focused }) => <TabBarIcon title="Orders" icon={images.clock} focused={focused} />
+                }}
+            />
+            <Tabs.Screen
+                name='profile/addresses'
+                options={{
+                    title: 'Address',
+                    tabBarIcon: ({ focused }) => <TabBarIcon title="Address" icon={images.location} focused={focused} />
+                }}
+            />
+            <Tabs.Screen
+                name='profile/payment-modes'
+                options={{
+                    title: 'Payments',
+                    tabBarIcon: ({ focused }) => <TabBarIcon title="Payments" icon={images.dollar} focused={focused} />
+                }}
+            />
         </Tabs>
     );
 }

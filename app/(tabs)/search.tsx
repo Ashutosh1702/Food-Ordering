@@ -11,6 +11,7 @@ import {MenuItem} from "@/type";
 
 import Filter from "@/components/Filter";
 import SearchBar from "@/components/SearchBar";
+import CustomHeader from "@/components/CustomHeader";
 
 const Search = () => {
     const { category, query } = useLocalSearchParams<{query: string; category: string}>()
@@ -41,6 +42,7 @@ const Search = () => {
                 contentContainerClassName="gap-7 px-5 pb-32"
                 ListHeaderComponent={() => (
                     <View className="my-5 gap-5">
+                        <CustomHeader title="Search" />
                         <View className="flex-between flex-row w-full">
                             <View className="flex-start">
                                 <Text className="small-bold uppercase text-primary">Search</Text>
