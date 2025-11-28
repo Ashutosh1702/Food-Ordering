@@ -156,6 +156,17 @@ export default function Index() {
                   {topPicks.slice(0, 10).map((it: any, idx: number) => {
                     const isExternal = /^https?:\/\//i.test(it.image_url);
                     const img = isExternal ? it.image_url : `${it.image_url}?project=${appwriteConfig.projectId}`;
+                    const localOverrides: Record<string, any> = {
+                      "Summer Combo Deluxe": images.burgerOne,
+                      "Classic Burger Combo": images.burgerTwo,
+                      "Mega Combo Feast": images.pizzaOne,
+                      "BBQ Chicken Pizza": images.pizzaOne,
+                      "Veggie Supreme Pizza": images.pizzaOne,
+                      "Four Cheese Pizza": images.pizzaOne,
+                      "Spicy Beef Burrito": images.buritto,
+                      "Loaded Veg Burrito": images.buritto,
+                    };
+                    const localSource = localOverrides[it.name];
                     return (
                       <TouchableOpacity
                         key={`${it.$id}-${idx}`}
@@ -164,7 +175,7 @@ export default function Index() {
                         activeOpacity={0.9}
                       >
                         <View className="border border-gray-200 rounded-xl p-3 items-center bg-white" style={{ shadowColor: '#878787' }}>
-                          <Image source={{ uri: img }} className="w-28 h-24" resizeMode="contain" />
+                          <Image source={localSource ?? { uri: img }} className="w-28 h-24" resizeMode="contain" />
                           <Text className="mt-2 base-semibold text-dark-100" numberOfLines={1}>{it.name}</Text>
                           <Text className="paragraph-medium text-gray-200">From ${Number(it.price).toFixed(2)}</Text>
                         </View>

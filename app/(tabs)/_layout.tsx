@@ -20,26 +20,28 @@ export default function TabLayout() {
     if(!isAuthenticated) return <Redirect href="/sign-in" />
 
     return (
-        <Tabs screenOptions={{
-                headerShown: false,
-                tabBarShowLabel: false,
-                tabBarStyle: {
-                    borderTopLeftRadius: 50,
-                    borderTopRightRadius: 50,
-                    borderBottomLeftRadius: 50,
-                    borderBottomRightRadius: 50,
-                    marginHorizontal: 20,
-                    height: 80,
-                    position: 'absolute',
-                    bottom: 40,
-                    backgroundColor: 'white',
-                    shadowColor: '#1a1a1a',
-                    shadowOffset: { width: 0, height: 2 },
-                    shadowOpacity: 0.1,
-                    shadowRadius: 4,
-                    elevation: 5
-                }
-            }}>
+        <Tabs
+  screenOptions={{
+    headerShown: false,
+    tabBarShowLabel: false,
+    tabBarStyle: {
+      borderRadius: 40,          
+      marginHorizontal: 20,
+      height: 95,                
+      paddingBottom: 12,         
+      paddingTop: 10,            
+      position: 'absolute',
+      bottom: 35,                
+      backgroundColor: '#fff',
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.15,
+      shadowRadius: 6,
+      elevation: 10
+    }
+  }}
+>
+
             <Tabs.Screen
                 name='index'
                 options={{
